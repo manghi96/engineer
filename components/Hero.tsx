@@ -11,7 +11,7 @@ const TERMINAL_LINES = [
   "",
 ];
 // Đường dẫn đến file CV duy nhất của bạn
-const CV_FILE = "/Tran_Minh_Nghia_Resume.pdf";
+const CV_FILE = "Tran_Minh_Nghia_Resume.pdf";
 
 function DownloadCVButton() {
   return (
