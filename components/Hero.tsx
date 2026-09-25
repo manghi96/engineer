@@ -17,7 +17,7 @@ function DownloadCVButton() {
   return (
     <a
       href={CV_FILE}
-      download
+      download="Tran_Minh_Nghia_Resume.pdf"
       className="px-6 py-3 border border-slate-400 hover:border-blue-600 text-slate-800 hover:text-slate-950 dark:border-slate-600 dark:text-slate-200 dark:hover:text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 text-sm inline-flex items-center gap-2"
     >
       Download CV
