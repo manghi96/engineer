@@ -58,17 +58,17 @@ const PROJECTS: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 lg:py-32 dot-texture bg-[#FAFAF7] border-t border-[#E4E4E7]">
+    <section id="projects" className="py-24 lg:py-24 bg-white dot-texture">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-14">
-          <p className="section-badge mb-4 reveal">03 — Projects</p>
+          <p className="section-badge mb-6 reveal">03 — Projects</p>
           <h2
             className="text-4xl lg:text-5xl font-bold reveal reveal-delay-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Things I&apos;ve
-            <br />
-            <span className="italic text-teal-600">shipped</span>
+            {/* <br /> */}
+            <span className="italic text-blue-600"> shipped</span>
           </h2>
         </div>
 
@@ -99,7 +99,7 @@ export default function Projects() {
                             {project.title}
                           </h3>
                         </div>
-                        <p className="text-teal-600 text-sm font-medium">{project.subtitle}</p>
+                        <p className="text-blue-600 text-sm font-medium">{project.subtitle}</p>
                       </div>
                       <span
                         className="text-xs text-slate-400 whitespace-nowrap mt-0.5"
@@ -114,11 +114,11 @@ export default function Projects() {
                     </p>
 
                     {/* Business value highlight */}
-                    <div className="bg-teal-50 border border-teal-100 rounded-lg p-4 mb-5">
-                      <p className="text-xs text-teal-600 font-mono mb-1 uppercase tracking-wider">
+                    <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-5">
+                      <p className="text-xs text-blue-600 font-mono mb-1 uppercase tracking-wider">
                         Business Impact
                       </p>
-                      <p className="text-sm text-teal-800 leading-relaxed">
+                      <p className="text-sm text-blue-800 leading-relaxed">
                         {project.businessValue}
                       </p>
                     </div>
@@ -153,7 +153,7 @@ export default function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-teal-600 transition-colors font-mono"
+                        className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-blue-600 transition-colors font-mono"
                       >
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />

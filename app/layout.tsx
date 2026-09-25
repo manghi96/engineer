@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nguyen Binh Phuong Tram — Software Engineer & Business Analyst",
+  title: "Nghia Tran",
   description:
-    "Portfolio of Nguyen Binh Phuong Tram — Software Engineering graduate from FPT University. Experienced in full-stack development, QA, and business analysis.",
+    "Portfolio of Tran Minh Nghia — BIM Plumbing Modeler graduate from Ton Duc Thang University. Experienced in BIM modeling, Design & Calculation, and Documentation.",
   openGraph: {
-    title: "Nguyen Binh Phuong Tram",
-    description: "Software Engineer & Business Analyst | Ho Chi Minh City",
+    title: "Tran Minh Nghia",
+    description: "BIM Plumbing Modeler | Ho Chi Minh City",
     type: "website",
   },
 };

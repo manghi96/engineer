@@ -2,9 +2,10 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import Projects from "@/components/Projects";
-import Timeline from "@/components/Timeline";
-import Certificates from "@/components/Certificates";
+import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -15,10 +16,11 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Skills />
-        <Projects />
-        <Timeline />
-        <Certificates />
+        <Experience />
+        {/* <Projects /> */}
+        <Certifications />
         <Contact />
       </main>
       <ScrollReveal />

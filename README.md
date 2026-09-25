@@ -1,4 +1,4 @@
-# Portfolio — Nguyen Binh Phuong Tram
+# Portfolio — Tran Minh Nghia
 
 Built with **Next.js 14 + TypeScript + Tailwind CSS**.
 
@@ -42,19 +42,20 @@ npm start
 ```
 portfolio/
 ├── app/
-│   ├── layout.tsx      # Root layout + metadata
-│   ├── page.tsx        # Main page
-│   └── globals.css     # Fonts, CSS variables, animations
+│   ├── layout.tsx              # Root layout + metadata
+│   ├── page.tsx                # Main page
+│   └── globals.css             # Fonts, CSS variables, animations
 ├── components/
-│   ├── Nav.tsx         # Navigation
-│   ├── Hero.tsx        # Hero + typing animation + code window
-│   ├── About.tsx       # About / story
-│   ├── Skills.tsx      # Skills grid
-│   ├── Projects.tsx    # Projects cards
-│   ├── Timeline.tsx    # Experience + Education
-│   ├── Certificates.tsx
-│   ├── Contact.tsx     # Contact + footer
-│   └── ScrollReveal.tsx # Scroll animation trigger
+│   ├── Nav.tsx                 # Navigation
+│   ├── Hero.tsx                # Hero + typing animation + code window
+│   ├── About.tsx               # About
+│   ├── Education.tsx           # Education
+│   ├── Skills.tsx              # Skills grid
+│   ├── Experience.tsx          # Experience
+│   ├── Projects.tsx            # Projects cards
+│   ├── Certifications.tsx      # Certifications
+│   ├── Contact.tsx             # Contact + footer
+│   └── ScrollReveal.tsx        # Scroll animation trigger
 └── public/
-    └── cv.pdf          # ← đặt CV của bạn vào đây
+    └── cv.pdf                  # ← đặt CV của bạn vào đây
 ```
