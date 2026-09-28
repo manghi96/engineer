@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CustomCursor from "@/components/CustomCursor";
+import PageLoader from "@/components/PageLoader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,7 +25,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-[#FAFAF7] text-[#0F0F0E] antialiased">{children}</body>
+      <body className="bg-[#FAFAF7] text-[#0F0F0E] antialiased">
+        <PageLoader />
+        {children}
+        <CustomCursor />
+      </body>
     </html>
   );
 }

@@ -111,7 +111,7 @@ function TerminalProfile() {
         <span className="code-dot bg-[#FEBC2E]" />
         <span className="code-dot bg-[#28C840]" />
         <span className="ml-4 text-xs" style={{ fontFamily: "var(--font-mono)", color: "#7A8BA3" }}>
-          manghi.exe
+          nghia_tran.exe
         </span>
       </div>
       <div className="terminal-body" style={{ fontFamily: "var(--font-mono)" }}>
@@ -156,7 +156,7 @@ export default function Hero() {
           >
             NGHIA 
             {/* <br /> */}
-            <span className="text-blue-500"> TRAN</span>
+            <span className="text-blue-600 dark:text-blue-500"> TRAN</span>
           </h1>
 
           <p
@@ -170,7 +170,7 @@ export default function Hero() {
           </p>
 
           <p
-            className="text-slate-700 dark:text-slate-300 text-base leading-relaxed mb-10"
+            className="text-slate-700 dark:text-slate-400 text-base leading-relaxed mb-10"
             style={{ animation: "fadeInUp 0.6s 0.24s ease both" }}
           >
             Environmental Engineering graduate specializing in Water Supply & Drainage, with strong UI/UX design experience. Seeking a BIM Modeler

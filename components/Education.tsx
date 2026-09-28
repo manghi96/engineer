@@ -29,7 +29,7 @@ export default function Education() {
           >
             Where I
             {/* <br /> */}
-            <span className="italic text-blue-600"> learned to build</span>
+            <span className="italic text-blue-600 dark:text-blue-500"> learned to build</span>
           </h2>
         </div>
 
@@ -46,16 +46,16 @@ export default function Education() {
                 <div className="timeline-dot" />
 
                 <div className="bg-white border border-gray-200 rounded-xl p-6 hover-lift">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="flex items-start gap-3">
+                  <div className="flex flex-col items-start gap-3 md:flex-row md:flex-wrap md:justify-between">
+                    <div className="flex min-w-0 items-start gap-3">
                       <span className="text-slate-400 text-lg -mt-1.3 flex-shrink-0">◈</span>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="font-bold text-gray-700 text-lg mb-0.5">{item.title}</h3>
-                        <p className="text-blue-600 text-base font-medium">{item.org}</p>
+                        <p className="text-blue-600 dark:text-blue-500 text-base font-medium">{item.org}</p>
                       </div>
                     </div>
                     <span
-                      className="text-sm text-slate-400 whitespace-nowrap mt-1"
+                      className="ml-8 text-sm text-slate-400 whitespace-nowrap mt-1 md:ml-0"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
                       {item.period}

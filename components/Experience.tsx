@@ -14,19 +14,19 @@ const renderDescription = (description: string) =>
 
     if (rest.length > 0) {
       return (
-        <div key={index} className="flex items-start gap-2 text-slate-600 text-sm leading-relaxed">
+        <div key={index} className="flex items-start gap-2 text-sm leading-relaxed">
           <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-500 shrink-0" />
           <p>
-            <span className="font-semibold text-slate-800">{title.trim()}</span>
+            <span className="font-semibold text-slate-700 dark:text-slate-300">{title.trim()}</span>
             {": "}
-            {rest.join(":").trim()}
+            <span className="text-slate-600 dark:text-slate-400">{rest.join(":").trim()}</span>
           </p>
         </div>
       );
     }
 
     return (
-      <div key={index} className="flex items-start gap-2 text-slate-600 text-sm leading-relaxed">
+      <div key={index} className="flex items-start gap-2 text-sm leading-relaxed">
         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-500 shrink-0" />
         <p>{cleanedLine}</p>
       </div>
@@ -131,7 +131,7 @@ export default function Timeline() {
           >
             My
             {/* <br /> */}
-            <span className="italic text-blue-600"> journey so far</span>
+            <span className="italic text-blue-600 dark:text-blue-500"> journey so far</span>
           </h2>
         </div>
 
@@ -159,8 +159,8 @@ export default function Timeline() {
                           {typeStyle[item.type].label}
                         </span>
                       </div> */}
-                      <h3 className="font-bold text-[#0F0F0E] text-lg mb-0.5">{item.title}</h3>
-                      <p className="text-blue-600 text-sm font-medium">{item.org}</p>
+                      <h3 className="font-bold text-slate-700 text-lg mb-0.5">{item.title}</h3>
+                      <p className="text-blue-600 dark:text-blue-500 text-sm font-medium">{item.org}</p>
                     </div>
                     <span
                       className="text-xs text-slate-400 whitespace-nowrap mt-1"

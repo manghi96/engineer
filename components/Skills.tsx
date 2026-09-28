@@ -52,7 +52,7 @@ export default function Skills() {
           >
             What I bring
             {/* <br /> */}
-            <span className="italic text-blue-600"> to the table</span>
+            <span className="italic text-blue-600 dark:text-blue-500"> to the table</span>
           </h2>
         </div>
 
@@ -67,9 +67,9 @@ export default function Skills() {
                 <div>
                   <div>
                     <div className="flex items-start gap-3 mb-5">
-                      <span className="text-blue-500 text-lg -mt-0.5">{group.emoji}</span>
+                      <span className="text-blue-600 dark:text-blue-500 text-lg -mt-0.5">{group.emoji}</span>
                       <div>
-                        <h3 className="text-xl font-bold text-[#0F0F0E]" style={{ fontFamily: "var(--font-display)" }}>
+                        <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
                           {group.category}
                         </h3>
                         {group.desc && <p className="text-xs text-slate-500 mt-0.5">{group.desc}</p>}

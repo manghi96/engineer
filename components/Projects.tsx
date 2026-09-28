@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     role: "Manual Tester · Front-end Developer · Project Documentation",
     team: "5 members",
     tech: ["ReactJS", "React Native", "ASP.NET Core", "VeChain", "Redis", "Firebase", "Cloudinary", "Jenkins"],
-    githubUrl: "https://github.com/phwtram",
+    githubUrl: "https://github.com/manghi96",
   },
   {
     number: "02",
@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
     role: "Front-end Developer · UI/UX Designer",
     team: "4 members",
     tech: ["ReactJS", "ViteJS", "ASP.NET Core", "MS SQL", "Azure SQL", "Azure App Service", "JWT"],
-    githubUrl: "https://github.com/phwtram",
+    githubUrl: "https://github.com/manghi96",
   },
   {
     number: "03",
@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
     role: "Developer · Tester",
     team: "Solo",
     tech: ["Java", "Maven", "JUnit", "GitHub Actions", "CI/CD", "Regression Testing"],
-    githubUrl: "https://github.com/phwtram",
+    githubUrl: "https://github.com/manghi96",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Projects() {
           >
             Things I&apos;ve
             {/* <br /> */}
-            <span className="italic text-blue-600"> shipped</span>
+            <span className="italic text-blue-600 dark:text-blue-500"> shipped</span>
           </h2>
         </div>
 
