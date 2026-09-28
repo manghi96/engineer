@@ -72,10 +72,10 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#0C1220] transition-none md:transition-all md:duration-300 ${
         scrolled
-          ? "bg-white/90 dark:bg-[#0C1220]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-white/5 shadow-lg"
-          : "bg-transparent"
+          ? "md:bg-white/90 md:dark:bg-[#0C1220]/95 md:backdrop-blur-md border-b border-slate-200/80 dark:border-white/5 shadow-lg"
+          : "md:bg-transparent"
       }`}
     >
       <nav className="w-full max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center">
@@ -111,7 +111,7 @@ export default function Nav() {
         </div>
 
         {/* Mobile hamburger */}
-        <div className="flex items-center gap-4">
+        <div className="ml-auto flex items-center gap-4 md:hidden">
           <button
             type="button"
             onClick={toggleTheme}
@@ -138,7 +138,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white/98 dark:bg-[#0C1220]/98 border-t border-slate-200 dark:border-white/5 px-6 py-4 flex flex-col gap-4">
+        <div className={`md:hidden bg-white dark:bg-[#0C1220] border-t border-slate-200 dark:border-white/5 px-6 py-4 flex flex-col gap-4 ${!scrolled ? "shadow-lg" : ""}`}>
           {links.map((l) => (
             <a
               key={l.href}
