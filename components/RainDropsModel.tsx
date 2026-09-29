@@ -19,6 +19,7 @@ import {
   WebGLRenderer,
 } from "three";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type Ripple = {
   x: number;
@@ -47,6 +48,7 @@ function mapRange(value: number, inputStart: number, inputEnd: number, outputSta
 export default function RainDropsModel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -63,7 +65,7 @@ export default function RainDropsModel() {
     }
 
     const scene = new Scene();
-    const camera = new PerspectiveCamera(10, 1, 1, 1000);
+    const camera = new PerspectiveCamera(8.5, 1, 1, 1000);
     camera.position.set(-180, 180, 180);
     scene.add(camera);
 
@@ -249,6 +251,15 @@ export default function RainDropsModel() {
     };
   }, []);
 
+  useEffect(() => {
+    containerRef.current?.querySelector("canvas")?.setAttribute(
+      "aria-label",
+      language === "en"
+        ? "Interactive 3D rain ripple model. Drag to rotate and scroll to zoom."
+        : "Mô hình gợn sóng mưa 3D tương tác. Kéo để xoay và cuộn để phóng to.",
+    );
+  }, [language, error]);
+
   return (
     <div className="rain-model" ref={containerRef}>
       {error && (
@@ -256,7 +267,9 @@ export default function RainDropsModel() {
           3D model could not be displayed: {error}
         </p>
       )}
-      <p className="rain-model__hint" aria-hidden="true">Drag to explore · Scroll to zoom</p>
+      <p className="rain-model__hint" aria-hidden="true">
+        {language === "en" ? "Drag to explore · Scroll to zoom" : "Kéo để xoay · Cuộn để phóng to"}
+      </p>
     </div>
   );
 }

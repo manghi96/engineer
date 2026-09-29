@@ -1,4 +1,8 @@
-type SkillTag = { name: string; type: "software" | "soft" };
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+
+type SkillTag = { name: string; viName?: string; type: "software" | "soft" };
 
 const SKILLS: { category: string; emoji: string; desc: string; tags: SkillTag[] }[] = [
   {
@@ -26,11 +30,11 @@ const SKILLS: { category: string; emoji: string; desc: string; tags: SkillTag[] 
     emoji: "◈",
     desc: "",
     tags: [
-      { name: "Interdisciplinary Communication & Coordination", type: "soft" },
-      { name: "Analytical Problem-Solving & Spatial Thinking", type: "soft" },
-      { name: "Collaboration & Teamwork", type: "soft" },
-      { name: "Time Management & Organization", type: "soft" },
-      { name: "Adaptability & Continuous Learning", type: "soft" },
+      { name: "Interdisciplinary Communication & Coordination", viName: "Giao tiếp & phối hợp liên ngành", type: "soft" },
+      { name: "Analytical Problem-Solving & Spatial Thinking", viName: "Tư duy phân tích, giải quyết vấn đề & không gian", type: "soft" },
+      { name: "Collaboration & Teamwork", viName: "Hợp tác & làm việc nhóm", type: "soft" },
+      { name: "Time Management & Organization", viName: "Quản lý thời gian & tổ chức công việc", type: "soft" },
+      { name: "Adaptability & Continuous Learning", viName: "Khả năng thích ứng & học hỏi liên tục", type: "soft" },
     ],
   },
 ];
@@ -41,18 +45,22 @@ const tagClass: Record<string, string> = {
 };
 
 export default function Skills() {
+  const { language } = useLanguage();
+
   return (
     <section id="skills" className="py-24 lg:py-24 bg-white dot-texture">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-14">
-          <p className="section-badge mb-6 reveal">03 — Skills</p>
+          <p className="section-badge mb-6 reveal">{language === "en" ? "03 — Skills" : "03 — Kỹ năng"}</p>
           <h2
             className="text-4xl lg:text-5xl font-bold reveal reveal-delay-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            What I bring
+            {language === "en" ? "What I bring" : "Những gì mà tôi áp dụng"}
             {/* <br /> */}
-            <span className="italic text-blue-600 dark:text-blue-500"> to the table</span>
+            <span className="italic text-blue-600 dark:text-blue-500">
+              {language === "en" ? " to the table" : " vào công việc"}
+            </span>
           </h2>
         </div>
 
@@ -69,8 +77,10 @@ export default function Skills() {
                     <div className="flex items-start gap-3 mb-5">
                       <span className="text-blue-600 dark:text-blue-500 text-lg -mt-0.5">{group.emoji}</span>
                       <div>
-                        <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
-                          {group.category}
+                        <h3 className="text-xl font-semibold" style={{ fontFamily: "var(--font-sans)" }}>
+                          {group.category === "Software Skills"
+                            ? language === "en" ? "Software Skills" : "Kỹ năng phần mềm"
+                            : language === "en" ? "Soft Skills" : "Kỹ năng mềm"}
                         </h3>
                         {group.desc && <p className="text-xs text-slate-500 mt-0.5">{group.desc}</p>}
                       </div>
@@ -81,7 +91,7 @@ export default function Skills() {
                           key={tag.name}
                           className={`skill-tag ${tagClass[tag.type]} text-xs px-3 py-1 rounded-full font-mono`}
                         >
-                          {tag.name}
+                          {language === "vi" && tag.viName ? tag.viName : tag.name}
                         </span>
                       ))}
                     </div>

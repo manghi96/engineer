@@ -1,19 +1,22 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const EMAIL = "manghi.work@gmail.com";
 // Đường dẫn đến file CV duy nhất của bạn
 const CV_FILE = "Tran_Minh_Nghia_Resume.pdf";
 
 function DownloadCVButton() {
+  const { language } = useLanguage();
+
   return (
     <a
       href={CV_FILE}
       download="Tran_Minh_Nghia_Resume.pdf"
-      className="px-6 py-3 border border-slate-400 hover:border-blue-600 text-slate-800 hover:text-slate-950 dark:border-slate-600 dark:text-slate-200 dark:hover:text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 text-sm inline-flex items-center gap-2"
+      className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 text-sm inline-flex items-center gap-2"
     >
-      Download CV
+      {language === "en" ? "Download Resume" : "Tải CV"}
       {/* <svg
         className="w-3.5 h-3.5"
         fill="none"
@@ -33,6 +36,7 @@ function DownloadCVButton() {
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const { language } = useLanguage();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(EMAIL);
@@ -43,7 +47,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-white dot-texture py-24 lg:py-24 overflow-hidden"
+      className="relative bg-white dot-texture pt-24 pb-10 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 dot-texture dark:dark-grid opacity-60" />
@@ -55,7 +59,7 @@ export default function Contact() {
           copied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
-        ✓ Email copied to clipboard
+        {language === "en" ? "✓ Email copied to clipboard" : "✓ Đã sao chép email"}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
@@ -63,30 +67,26 @@ export default function Contact() {
           {/* ── Left ── */}
           <div>
             <p className="section-badge mb-6 reveal">
-              06 — Contact
+              {language === "en" ? "06 — Contact" : "06 — Liên hệ"}
             </p>
             <h2
               className="text-4xl lg:text-5xl font-bold text-slate-950 dark:text-slate-50 leading-tight mb-6 reveal reveal-delay-1"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Let&apos;s build
+              {language === "en" ? "Let's build" : "Cùng xây dựng"}
               <br />
-              <span className="italic text-blue-600 dark:text-blue-500">something great</span>
+              <span className="italic text-blue-600 dark:text-blue-500">
+                {language === "en" ? "something great" : "những điều tuyệt vời"}
+              </span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed max-w-md mb-10 reveal reveal-delay-2">
-              I&apos;m happy to connect, listen and help.
+            <p className="text-slate-700 dark:text-slate-400 text-base leading-relaxed max-w-md mb-10 reveal reveal-delay-2">
+              {language === "en" ? "I'm happy to connect, listen and help." : "Tôi luôn sẵn lòng kết nối, lắng nghe và hỗ trợ."}
               <br />
-              Let's work together and build something awesome.
+              {language === "en" ? "Let's work together and build something awesome." : "Hãy cùng hợp tác và tạo nên những điều tuyệt vời."}
             </p>
 
             <div className="flex flex-wrap gap-3 reveal reveal-delay-3">
-              <button
-                onClick={handleCopyEmail}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 text-sm"
-              >
-                {copied ? "Copied! ✓" : "Copy Email"}
-              </button>
-<DownloadCVButton />
+              <DownloadCVButton />
             </div>
           </div>
 
@@ -107,7 +107,9 @@ export default function Contact() {
                   Email
                 </p>
                 <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">
-                  {copied ? "Copied to clipboard ✓" : EMAIL}
+                  {copied
+                    ? language === "en" ? "Copied to clipboard ✓" : "Đã sao chép ✓"
+                    : EMAIL}
                 </span>
               </div>
             </button>
@@ -153,8 +155,12 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5" style={{ fontFamily: "var(--font-mono)" }}>Location</p>
-                <span className="text-slate-700 dark:text-slate-300 text-sm">Tan Thoi Hiep, Ho Chi Minh City</span>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5" style={{ fontFamily: "var(--font-mono)" }}>
+                  {language === "en" ? "Location" : "Địa chỉ"}
+                </p>
+                <span className="text-slate-700 dark:text-slate-300 text-sm">
+                  {language === "en" ? "Tan Thoi Hiep, Ho Chi Minh City" : "Tân Thới Hiệp, Thành phố Hồ Chí Minh"}
+                </span>
               </div>
             </div>
           </div>
@@ -162,11 +168,13 @@ export default function Contact() {
 
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-slate-500 dark:text-slate-500 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
-            © 2026 Tran Minh Nghia — Built with Next.js & TypeScript
+          <span className="text-center text-slate-500 dark:text-slate-500 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+            {language === "en"
+              ? "© 2026 Tran Minh Nghia — Built with Next.js & TypeScript"
+              : "© 2026 Trần Minh Nghĩa — Phát triển bằng Next.js & TypeScript"}
           </span>
           <span className="text-slate-500 dark:text-slate-600 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
-            HCMC Vietnam
+            {language === "en" ? "HCMC Vietnam" : "TP. Hồ Chí Minh, Việt Nam"}
           </span>
         </div>
       </div>

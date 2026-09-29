@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
+  { en: "About", vi: "Giới thiệu", href: "#about" },
+  { en: "Education", vi: "Học vấn", href: "#education" },
+  { en: "Skills", vi: "Kỹ năng", href: "#skills" },
+  { en: "Experience", vi: "Kinh nghiệm", href: "#experience" },
   // { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
+  { en: "Certifications", vi: "Chứng chỉ", href: "#certifications" },
+  { en: "Contact", vi: "Liên hệ", href: "#contact" },
 ];
 
 function ThemeIcon({ darkMode }: { darkMode: boolean }) {
@@ -51,6 +52,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -82,44 +84,56 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="#home"
-          className="font-mono text-lg font-medium text-slate-900 dark:text-white tracking-tight"
-          style={{ fontFamily: "var(--font-mono)" }}
+          className="inline-flex items-center gap-2 font-sans text-lg font-black text-slate-900 dark:text-white"
+          style={{ fontFamily: "var(--font-sans)" }}
         >
-          nghia<span className="text-blue-500">.</span>
+          <img
+            src="/engineer/logo.png"
+            alt=""
+            width={20}
+            height={24}
+            className="shrink-0 object-contain"
+          />
+          {/* NGHIA<span className="-ml-1 text-blue-600">TRAN</span> */}
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 ml-auto">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="nav-link text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+        <div className="hidden md:flex items-center ml-auto">
+          <div className="flex items-center gap-8">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="nav-link text-md text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              >
+                {l[language]}
+              </a>
+            ))}
+          </div>
+          <div className="ml-6 flex items-center gap-3 border-l border-slate-300 dark:border-slate-700/60 pl-6">
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              aria-label={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
+              title={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
             >
-              {l.label}
-            </a>
-          ))}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-            aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-            title={`Switch to ${darkMode ? "light" : "dark"} mode`}
-          >
-            <ThemeIcon darkMode={darkMode} />
-          </button>
+              {language === "en" ? "VI" : "EN"}
+            </button>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
+              title={`Switch to ${darkMode ? "light" : "dark"} mode`}
+            >
+              <ThemeIcon darkMode={darkMode} />
+            </button>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
-        <div className="ml-auto flex items-center gap-4 md:hidden">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors md:hidden"
-            aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-          >
-            <ThemeIcon darkMode={darkMode} />
-          </button>
+        <div className="ml-auto md:hidden">
           <button
             className="md:hidden text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
             onClick={() => setOpen(!open)}
@@ -138,18 +152,39 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className={`md:hidden bg-white dark:bg-[#0C1220] border-t border-slate-200 dark:border-white/5 px-6 py-4 flex flex-col gap-4 ${!scrolled ? "shadow-lg" : ""}`}>
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white text-sm"
-              onClick={() => setOpen(false)}
+        <div className={`md:hidden bg-white dark:bg-[#0C1220] border-t border-slate-200 dark:border-white/5 px-6 py-4 ${!scrolled ? "shadow-lg" : ""}`}>
+          <div className="flex flex-col gap-4">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white text-sm"
+                onClick={() => setOpen(false)}
+              >
+                {l[language]}
+              </a>
+            ))}
+          </div>
+          <div className="mt-4 flex items-center gap-3 border-t border-slate-200 dark:border-white/10 pt-4">
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              aria-label={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
+              title={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
             >
-              {l.label}
-            </a>
-          ))}
-        
+              {language === "en" ? "VI" : "EN"}
+            </button>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
+              title={`Switch to ${darkMode ? "light" : "dark"} mode`}
+            >
+              <ThemeIcon darkMode={darkMode} />
+            </button>
+          </div>
         </div>
       )}
     </header>

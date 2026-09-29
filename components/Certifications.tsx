@@ -1,44 +1,58 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+
 type Certifications = {
   name: string;
+  viName: string;
   issuer: string;
-  relevance: string;
+  relevance: { en: string; vi: string };
   url: string;
 };
 
 const CERTS: Certifications[] = [
   {
     name: "BIM Revit MEPF Certificate",
+    viName: "Chứng chỉ BIM Revit MEPF",
     issuer: "RevitTech",
-    relevance: "BIM MEPF",
+    relevance: { en: "BIM MEPF", vi: "BIM MEPF" },
     url: "#",
   },
   {
     name: "Google UX Design Professional Certificate",
+    viName: "Chứng chỉ Thiết kế UX chuyên nghiệp của Google",
     issuer: "Coursera",
-    relevance: "UX Design",
+    relevance: { en: "UX Design", vi: "Thiết kế UX" },
     url: "#",
   },
   {
     name: "Microsoft Office Specialist Certificate (MOS)",
+    viName: "Chứng chỉ Chuyên gia Microsoft Office (MOS)",
     issuer: "Microsoft",
-    relevance: "Office Productivity",
+    relevance: { en: "Office Productivity", vi: "Tin học văn phòng" },
     url: "#",
   },
 ];
 
 export default function Certifications() {
+  const { language } = useLanguage();
+
   return (
     <section className="py-24 lg:py-24 bg-white dot-texture">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-12">
-          <p className="section-badge mb-6 reveal">05 — Certifications</p>
+          <p className="section-badge mb-6 reveal">
+            {language === "en" ? "05 — Certifications" : "05 — Chứng chỉ"}
+          </p>
           <h2
             className="text-4xl lg:text-5xl font-bold reveal reveal-delay-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Continuous
+            {language === "en" ? "Continuous" : "Không ngừng"}
             {/* <br /> */}
-            <span className="italic text-blue-600 dark:text-blue-500"> learning</span>
+            <span className="italic text-blue-600 dark:text-blue-500">
+              {language === "en" ? " learning" : " học hỏi"}
+            </span>
           </h2>
         </div>
 
@@ -63,7 +77,7 @@ export default function Certifications() {
 
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-slate-700 text-sm leading-snug group-hover:text-blue-500 transition-colors">
-                  {cert.name}
+                  {language === "en" ? cert.name : cert.viName}
                 </p>
                 <p
                   className="text-xs text-slate-400 mt-1"
@@ -72,7 +86,7 @@ export default function Certifications() {
                   {cert.issuer}
                 </p>
                 <span className="inline-block mt-2 text-xs px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-100 rounded-full font-mono">
-                  {cert.relevance}
+                  {cert.relevance[language]}
                 </span>
               </div>
 

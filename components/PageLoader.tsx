@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const MINIMUM_LOADING_DURATION = 2000;
 const PIPE_COUNT = 22;
@@ -25,6 +26,7 @@ function randomBetween(min: number, max: number) {
 export default function PageLoader() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [visible, setVisible] = useState(true);
+  const { language } = useLanguage();
 
   useEffect(() => {
     let pageLoaded = document.readyState === "complete";
@@ -173,11 +175,11 @@ export default function PageLoader() {
     <div
       className={`page-loader${visible ? "" : " page-loader--hidden"}`}
       role="status"
-      aria-label="Loading page"
+      aria-label={language === "en" ? "Loading page" : "Đang tải trang"}
       aria-hidden={!visible}
     >
       <canvas ref={canvasRef} className="page-loader__pipes" aria-hidden="true" />
-      <span className="sr-only">Loading</span>
+      <span className="sr-only">{language === "en" ? "Loading" : "Đang tải"}</span>
     </div>
   );
 }

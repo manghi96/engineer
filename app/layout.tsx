@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CustomCursor from "@/components/CustomCursor";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import PageLoader from "@/components/PageLoader";
 import "./globals.css";
 
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
     title: "Tran Minh Nghia",
     description: "BIM Plumbing Modeler | Ho Chi Minh City",
     type: "website",
+  },
+  icons: {
+    icon: [
+      { url: "favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "apple-touch-icon.png",
   },
 };
 
@@ -26,9 +34,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-[#FAFAF7] text-[#0F0F0E] antialiased">
-        <PageLoader />
-        {children}
-        <CustomCursor />
+        <LanguageProvider>
+          <PageLoader />
+          {children}
+          <CustomCursor />
+        </LanguageProvider>
       </body>
     </html>
   );

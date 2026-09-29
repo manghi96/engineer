@@ -13,8 +13,8 @@
   --border: #E4E4E7;
   --dark: #0C1220;
   --dark-2: #131E2E;
-  --cursor-fill: #F2F5F8;
-  --cursor-stroke: #111920;
+  --cursor-fill: #2563EB;
+  --cursor-stroke: #1E293B;
   --rain-water: #4C71EC;
   --rain-drop: #96CFF8;
   --tag-software-bg: #EFF6FF;
@@ -27,7 +27,7 @@
   --loader-mid: #2563EB;
   --loader-end: #93C5FD;
   --font-display: 'Lora', serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 }
 
