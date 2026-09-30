@@ -76,7 +76,7 @@ export default function Certifications() {
               </div>
 
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-slate-700 text-sm leading-snug group-hover:text-blue-500 transition-colors">
+                <p className="font-semibold text-slate-700 text-sm leading-snug transition-colors">
                   {language === "en" ? cert.name : cert.viName}
                 </p>
                 <p

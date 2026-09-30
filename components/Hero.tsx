@@ -243,7 +243,7 @@ export default function Hero() {
           >
             <button
               onClick={copyEmail}
-              className="text-slate-700 hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-300 transition-colors text-sm font-mono"
+              className="text-slate-700 hover:text-blue-600 dark:text-slate-500 dark:hover:text-blue-500 transition-colors text-sm font-mono"
             >
               {emailCopyStatus === "copied"
                 ? language === "en" ? "Email copied ✓" : "Đã sao chép email ✓"
@@ -255,7 +255,7 @@ export default function Hero() {
               href="https://www.linkedin.com/in/manghi96"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-700 hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-300 transition-colors text-sm font-mono"
+              className="text-slate-700 hover:text-blue-600 dark:text-slate-500 dark:hover:text-blue-500 transition-colors text-sm font-mono"
             >
               LinkedIn ↗
             </a>

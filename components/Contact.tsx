@@ -95,9 +95,9 @@ export default function Contact() {
             {/* Email — click to copy */}
             <button
               onClick={handleCopyEmail}
-              className="w-full bg-white dark:bg-slate-800/40 border border-[#E4E4E7] dark:border-slate-700/50 rounded-xl p-5 flex items-center gap-4 hover:border-blue-500/40 transition-colors text-left group"
+              className="w-full bg-white border border-gray-200 rounded-xl p-5 flex items-center gap-4 hover-lift transition-colors text-left group"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -106,7 +106,7 @@ export default function Contact() {
                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5" style={{ fontFamily: "var(--font-mono)" }}>
                   Email
                 </p>
-                <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">
+                <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors text-sm">
                   {copied
                     ? language === "en" ? "Copied to clipboard ✓" : "Đã sao chép ✓"
                     : EMAIL}
@@ -119,9 +119,9 @@ export default function Contact() {
               href="https://linkedin.com/in/manghi96"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-white dark:bg-slate-800/40 border border-[#E4E4E7] dark:border-slate-700/50 rounded-xl p-5 flex items-center gap-4 hover:border-blue-500/40 transition-colors group"
+              className="w-full bg-white border border-gray-200 rounded-xl p-5 flex items-center gap-4 hover-lift transition-colors text-left group"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -140,29 +140,34 @@ export default function Contact() {
               </div>
               <div className="min-w-0">
                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5" style={{ fontFamily: "var(--font-mono)" }}>LinkedIn</p>
-                <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">
+                <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors text-sm">
                   linkedin.com/in/manghi96 ↗
                 </span>
               </div>
             </a>
 
             {/* Location */}
-            <div className="w-full bg-white dark:bg-slate-800/40 border border-[#E4E4E7] dark:border-slate-700/50 rounded-xl p-5 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0">
+            <a
+              href="https://maps.app.goo.gl/8PKcdyHy9mKsmro57"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-white border border-gray-200 rounded-xl p-5 flex items-center gap-4 hover-lift transition-colors text-left group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700/60 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5" style={{ fontFamily: "var(--font-mono)" }}>
                   {language === "en" ? "Location" : "Địa chỉ"}
                 </p>
-                <span className="text-slate-700 dark:text-slate-300 text-sm">
-                  {language === "en" ? "Tan Thoi Hiep, Ho Chi Minh City" : "Tân Thới Hiệp, Thành phố Hồ Chí Minh"}
+                <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors text-sm">
+                  {language === "en" ? "Tan Thoi Hiep, Ho Chi Minh City ↗" : "Tân Thới Hiệp, Thành phố Hồ Chí Minh ↗"}
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

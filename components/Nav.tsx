@@ -121,7 +121,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-600 hover:text-slate-900 dark:text-slate-400 dark:hover:border-blue-500 dark:hover:text-white transition-colors"
               aria-label={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
               title={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
             >
@@ -130,7 +130,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={toggleTheme}
-              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-600 hover:text-slate-900 dark:text-slate-400 dark:hover:border-blue-500 dark:hover:text-white transition-colors"
               aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
               title={`Switch to ${darkMode ? "light" : "dark"} mode`}
             >
@@ -176,7 +176,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-xs font-semibold leading-none text-slate-600 hover:border-blue-600 hover:text-slate-900 dark:text-slate-400 dark:hover:border-blue-500 dark:hover:text-white transition-colors"
               aria-label={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
               title={language === "en" ? "Chuyển sang tiếng Việt" : "Switch to English"}
             >
@@ -185,7 +185,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={toggleTheme}
-              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-500/60 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              className="theme-toggle inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700/60 text-base leading-none text-slate-600 hover:border-blue-600 hover:text-slate-900 dark:text-slate-400 dark:hover:border-blue-500 dark:hover:text-white transition-colors"
               aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
               title={`Switch to ${darkMode ? "light" : "dark"} mode`}
             >

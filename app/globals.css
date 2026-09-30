@@ -7,7 +7,7 @@
 :root {
   --bg: #FAFAF7;
   --fg: #0F0F0E;
-  --accent: #416CD7;
+  --accent: #2563EB;
   --accent-light: #DBEAFE;
   --muted: #71717A;
   --border: #E4E4E7;
@@ -34,7 +34,7 @@
 html.dark {
   --bg: #0b1220;
   --fg: #f1f5f9;
-  --accent: #60a5fa;
+  --accent: #3B82F6;
   --accent-light: #1e3a8a;
   --cursor-fill: #FFFFFF;
   --cursor-stroke: #FFFFFF;
@@ -443,7 +443,7 @@ html.dark .dot-texture {
 }
 html.dark .hover-lift:hover { box-shadow: 0 24px 48px rgba(0,0,0,0.3); }
 html.dark .theme-toggle {
-  color: #cbd5e1;
+  color: #a8b4c7;
 }
 html.dark .theme-toggle:hover { color: #fff; }
 html.dark .hover-lift:hover { border-color: #3b82f6; }
