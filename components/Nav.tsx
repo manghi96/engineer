@@ -92,7 +92,14 @@ export default function Nav() {
             alt=""
             width={20}
             height={24}
-            className="shrink-0 object-contain"
+            className="shrink-0 object-contain dark:hidden"
+          />
+          <img
+            src="/engineer/logo-dark.png"
+            alt=""
+            width={20}
+            height={24}
+            className="hidden shrink-0 object-contain dark:block"
           />
           {/* NGHIA<span className="-ml-1 text-blue-600">TRAN</span> */}
         </a>
