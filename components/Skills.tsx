@@ -16,6 +16,7 @@ const SKILLS: { category: string; emoji: string; desc: string; tags: SkillTag[] 
       { name: "Microsoft Office", type: "software" },
       { name: "AutoDesk Maya", type: "software" },
       { name: "Blender", type: "software" },
+      { name: "Spline", type: "software" },
       { name: "ZBrush", type: "software" },
       { name: "Adobe Substance 3D Painter", type: "software" },
       { name: "Adobe Photoshop", type: "software" },

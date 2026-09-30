@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const ROLES = {
-  en: ["BIM Plumbing Modeler", "Plumbing Engineer", "Product Designer"],
-  vi: ["BIM Modeler Cấp thoát nước", "Kỹ sư Cấp thoát nước", "Product Designer"],
+  en: ["BIM Plumbing Modeler.", "Plumbing Engineer.", "Product Designer.", "Minimalist.", "Cinephilia."],
+  vi: ["BIM Modeler Cấp thoát nước.", "Kỹ sư Cấp thoát nước.", "Nhà thiết kế sản phẩm.", "Người yêu tối giản.", "Người yêu điện ảnh."],
 };
 const TERMINAL_LINES = {
   en: [
