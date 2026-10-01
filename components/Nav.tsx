@@ -74,9 +74,9 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#0C1220] transition-none md:transition-all md:duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#253D77] transition-none md:transition-all md:duration-300 ${
         scrolled
-          ? "md:bg-white/90 md:dark:bg-[#0C1220]/95 md:backdrop-blur-md border-b border-slate-200/80 dark:border-white/5 shadow-lg"
+          ? "md:bg-white/90 md:dark:bg-[#253D77]/95 md:backdrop-blur-md border-b border-slate-200/80 dark:border-white/5 shadow-lg"
           : "md:bg-transparent"
       }`}
     >
@@ -159,7 +159,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className={`md:hidden bg-white dark:bg-[#0C1220] border-t border-slate-200 dark:border-white/5 px-6 py-4 ${!scrolled ? "shadow-lg" : ""}`}>
+        <div className={`md:hidden bg-white dark:bg-[#253D77] border-t border-slate-200 dark:border-white/5 px-6 py-4 ${!scrolled ? "shadow-lg" : ""}`}>
           <div className="flex flex-col gap-4">
             {links.map((l) => (
               <a
