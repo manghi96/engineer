@@ -40,6 +40,8 @@ const GRID_SIZE = 30;
 const DROP_INTERVAL = 100;
 const DROP_FALL_SPEED = 110;
 const WAVE_LENGTH = 200;
+const CAMERA_FOV = 22;
+const CAMERA_DISTANCE = 125;
 
 function mapRange(value: number, inputStart: number, inputEnd: number, outputStart: number, outputEnd: number) {
   return outputStart + (outputEnd - outputStart) * ((value - inputStart) / (inputEnd - inputStart));
@@ -65,8 +67,17 @@ export default function RainDropsModel() {
     }
 
     const scene = new Scene();
-    const camera = new PerspectiveCamera(8.5, 1, 1, 1000);
-    camera.position.set(-180, 180, 180);
+    const centerX = GRID_SIZE * 0.4;
+    const centerZ = GRID_SIZE * 0.6;
+    const modelCenterX = (GRID_SIZE - 1) / 2 - centerX;
+    const modelCenterZ = (GRID_SIZE - 1) / 2 - centerZ;
+    const cameraOffset = CAMERA_DISTANCE / Math.sqrt(3);
+    const camera = new PerspectiveCamera(CAMERA_FOV, 1, 1, 1000);
+    camera.position.set(
+      modelCenterX - cameraOffset,
+      cameraOffset,
+      modelCenterZ + cameraOffset,
+    );
     scene.add(camera);
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -108,8 +119,6 @@ export default function RainDropsModel() {
     mesh.receiveShadow = true;
     scene.add(mesh);
 
-    const centerX = GRID_SIZE * 0.4;
-    const centerZ = GRID_SIZE * 0.6;
     const pivots: Object3D[] = [];
     const positions = new Float32Array(GRID_SIZE * GRID_SIZE * 2);
     const matrix = new Matrix4();
@@ -138,6 +147,10 @@ export default function RainDropsModel() {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.04;
+    controls.target.set(modelCenterX, 0, modelCenterZ);
+    controls.minDistance = 125;
+    controls.maxDistance = 600;
+    controls.enablePan = false;
 
     const dropGeometry = new BoxGeometry(0.5, 2, 0.5);
     const dropMaterial = new MeshLambertMaterial({ color: dropColor });
