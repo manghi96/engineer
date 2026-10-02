@@ -77,8 +77,8 @@ const ITEMS: TimelineItem[] = [
     org: "TTM68 Network",
     type: "Full Time",
     viType: "Toàn thời gian",
-    tags: ["UI Design", "Visual Design", "Web3/NFT"],
-    viTags: ["Thiết kế UI", "Thiết kế hình ảnh", "Web3/NFT"],
+    tags: ["Structural Layout & Wireframing", "System Architecture Mapping", "Complex System Visualization"],
+    viTags: ["Bố cục cấu trúc & Wireframing", "Định hình kiến trúc hệ thống", "Trực quan hóa hệ thống phức tạp"],
     description:
       "• Spatial Layout & Wireframing: Designed structured spatial layouts and detailed wireframes for complex digital platforms, ensuring clear spatial hierarchy and organized component distribution.\n• Complex System Visualization: Translated multi-layered system structures and technical requirements into clear, intuitive 2D/3D visual interfaces to optimize navigation and clarity.",
     viDescription:
@@ -105,8 +105,8 @@ const ITEMS: TimelineItem[] = [
     org: "4Bros Media",
     type: "Full Time",
     viType: "Toàn thời gian",
-    tags: ["Print-on-Demand", "Pre-press", "Trend Research"],
-    viTags: ["In ấn theo yêu cầu", "Pre-press", "Nghiên cứu xu hướng"],
+    tags: ["Dimensional Precision & Layout Scale", "Pre-Production & File Specifications"],
+    viTags: ["Độ chính xác kích thước & Tỷ lệ bố cục", "Chuẩn bị sản xuất & Thông số tệp"],
     description:
       "• Production Specifications: Prepared production-ready technical assets, managing layout scale, output specifications, and precision tolerances.\n• Asset Standardization: Developed scalable visual assets and digital mockups following strict technical requirements for manufacturing and output.",
     viDescription:
