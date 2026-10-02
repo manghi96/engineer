@@ -27,13 +27,13 @@ export default function About() {
             <div className="space-y-4 text-slate-700 dark:text-slate-400 text-base leading-relaxed">
               <p className="reveal reveal-delay-2">
                 {language === "en"
-                  ? "I'm an Environmental Engineering graduate from Ton Duc Thang University, specializing in Water Supply & Drainage. I have built a strong technical foundation in water and wastewater systems, alongside solid expertise in 3D visualization, spatial design, and digital workflows."
-                  : "Tôi tốt nghiệp ngành Kỹ thuật Môi trường tại Trường Đại học Tôn Đức Thắng, chuyên ngành Cấp thoát nước. Tôi có nền tảng chuyên môn vững chắc về hệ thống cấp thoát nước, cùng kinh nghiệm về trực quan hóa 3D, thiết kế không gian và quy trình làm việc số."}
+                  ? "I graduated from Ton Duc Thang University with a bachelor's degree in Environmental Engineering Technology, specializing in Water Supply & Drainage. After graduation, I explored the digital multimedia design field, where I strengthened my skills in 3D visualization, complex system structuring, and cross-functional workflow coordination."
+                  : "Tôi tốt nghiệp Đại học Tôn Đức Thắng với bằng Cử nhân ngành Công nghệ Kỹ thuật Môi trường, chuyên ngành Cấp thoát nước. Sau khi tốt nghiệp, tôi đã thử sức trong lĩnh vực thiết kế kỹ thuật số đa phương tiện, qua đó trau dồi các kỹ năng về trực quan hóa 3D, xây dựng cấu trúc hệ thống phức tạp và phối hợp quy trình làm việc liên bộ phận."}
               </p>
               <p className="reveal reveal-delay-3">
                 {language === "en"
-                  ? "I'm actively seeking a position as a BIM Modeler (Plumbing/MEP) where I can apply my engineering knowledge and digital modeling precision to create accurate, clash-free BIM models. I am eager to contribute to efficient project delivery while continuously developing my technical and coordination skills to achieve my long-term career goal of becoming a BIM Manager."
-                  : "Tôi đang tìm kiếm vị trí BIM Modeler (Cấp thoát nước/MEP), nơi tôi có thể vận dụng kiến thức kỹ thuật và khả năng mô hình hóa chính xác để tạo ra các mô hình BIM chuẩn xác, hạn chế xung đột. Tôi mong muốn góp phần triển khai dự án hiệu quả, đồng thời phát triển kỹ năng chuyên môn và phối hợp để hướng đến mục tiêu trở thành BIM Manager."}
+                  ? "I'm now shifting my career direction and am fully committed to returning to my core engineering path. I am seeking a Plumbing/MEP BIM Modeler role where I can combine my academic engineering knowledge with my advanced 3D modeling skills to build precise, production-ready BIM models and grow into a professional BIM Manager."
+                  : "Hiện tại, tôi đang chuyển hướng sự nghiệp và hoàn toàn quyết tâm quay trở lại với con đường kỹ thuật chuyên môn. Tôi đang tìm kiếm vị trí BIM Modeler (Cấp thoát nước/MEP), nơi tôi có thể kết hợp kiến ​​thức kỹ thuật nền tảng cùng kỹ năng mô hình hóa 3D chuyên sâu để tạo ra các mô hình BIM chính xác, sẵn sàng cho giai đoạn thi công, đồng thời phát triển bản thân trở thành một BIM Manager."}
               </p>
             </div>
 

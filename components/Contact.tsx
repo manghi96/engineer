@@ -85,10 +85,15 @@ function FooterKitten({ footerRef }: { footerRef: RefObject<HTMLElement> }) {
     };
 
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    const handlePointerDown = (event: PointerEvent) => {
+      if (event.pointerType === "touch") handlePointerMove(event);
+    };
+    window.addEventListener("pointerdown", handlePointerDown, { passive: true });
     const jumpInterval = window.setInterval(jumpIfNeeded, 1000);
 
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerdown", handlePointerDown);
       window.clearInterval(jumpInterval);
       window.clearTimeout(walkTimer);
       window.clearTimeout(jumpTimer);
@@ -279,7 +284,7 @@ export default function Contact() {
                 ? "© 2026 Tran Minh Nghia — Built with Next.js & TypeScript"
                 : "© 2026 Trần Minh Nghĩa — Phát triển bằng Next.js & TypeScript"}
             </span>
-            <span className="text-slate-500 dark:text-slate-600 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+            <span className="text-slate-500 dark:text-slate-500 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
               {language === "en" ? "HCMC Vietnam" : "TP. Hồ Chí Minh, Việt Nam"}
             </span>
           </div>

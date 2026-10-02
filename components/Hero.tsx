@@ -220,8 +220,8 @@ export default function Hero() {
             style={{ animation: "fadeInUp 0.6s 0.24s ease both" }}
           >
             {language === "en"
-              ? "Environmental Engineering graduate specializing in Water Supply & Drainage, with UI/UX design experience. Seeking a BIM Modeler (Plumbing/MEP) position to combine my technical knowledge of water/wastewater systems with advanced 3D modeling and spatial design skills. Highly motivated to deliver accurate 3D models, streamline workflows, and grow into a BIM Manager."
-              : "Tốt nghiệp ngành Kỹ thuật Môi trường, chuyên ngành Cấp thoát nước, cùng kinh nghiệm về thiết kế UI/UX. Tôi đang tìm kiếm vị trí BIM Modeler (Cấp thoát nước/MEP) để kết hợp kiến thức kĩ thuật về hệ thống cấp thoát nước với kỹ năng mô hình hóa 3D và thiết kế không gian. Luôn nỗ lực tạo ra mô hình chính xác, tối ưu quy trình và đặt mục tiêu trở thành BIM Manager."}
+              ? "Environmental Engineering graduate with a strong foundation in Water Supply & Drainage, returning to core engineering with a rich background in 3D digital modeling and design systems. Eager to leverage my technical knowledge and spatial design skills as a BIM Modeler (Plumbing / MEP) to deliver accurate, clash-free 3D models."
+              : "Tốt nghiệp ngành Kỹ thuật Môi trường với nền tảng vững chắc về Cấp thoát nước, tôi định hướng quay lại ngành kỹ thuật sau một thời gian tích lũy kinh nghiệm về mô hình hóa 3D và tư duy hệ thống. Mong muốn ứng tuyển vị trí BIM Modeler (Cấp thoát nước / MEP) để vận dụng kiến thức chuyên môn cùng kỹ năng dựng hình không gian vào các mô hình BIM chính xác."}
           </p>
 
           <div
