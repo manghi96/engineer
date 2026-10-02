@@ -55,14 +55,46 @@ export default function Nav() {
   const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handler);
+    let hideScrollTimer: number | undefined;
+
+    const handler = () => {
+      setScrolled(window.scrollY > 40);
+
+      document.documentElement.classList.add("is-scrolling");
+      window.clearTimeout(hideScrollTimer);
+      hideScrollTimer = window.setTimeout(() => {
+        document.documentElement.classList.remove("is-scrolling");
+      }, 420);
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      const root = document.documentElement;
+      const scrollbarWidth = window.innerWidth - root.clientWidth;
+      const hoveringScrollbar =
+        scrollbarWidth > 0 && event.clientX >= root.clientWidth;
+
+      root.classList.toggle("is-scrollbar-hovered", hoveringScrollbar);
+    };
+    const clearScrollbarHover = () => {
+      document.documentElement.classList.remove("is-scrollbar-hovered");
+    };
+
+    window.addEventListener("scroll", handler, { passive: true });
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("pointerleave", clearScrollbarHover);
+
     const savedTheme = window.localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
     document.documentElement.classList.toggle("dark", shouldUseDark);
     setDarkMode(shouldUseDark);
-    return () => window.removeEventListener("scroll", handler);
+
+    return () => {
+      window.removeEventListener("scroll", handler);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerleave", clearScrollbarHover);
+      window.clearTimeout(hideScrollTimer);
+    };
   }, []);
 
   const toggleTheme = () => {

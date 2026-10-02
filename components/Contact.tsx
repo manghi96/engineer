@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type RefObject } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const EMAIL = "manghi.work@gmail.com";
@@ -34,9 +34,106 @@ function DownloadCVButton() {
   );
 }
 
+function FooterKitten({ footerRef }: { footerRef: RefObject<HTMLElement> }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const catRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const footer = footerRef.current;
+    const wrapper = wrapperRef.current;
+    const cat = catRef.current;
+    const head = headRef.current;
+    if (!footer || !wrapper || !cat || !head) return;
+
+    let pointerX: number | null = null;
+    let pointerY: number | null = null;
+    let walkTimer: number | undefined;
+    let jumpTimer: number | undefined;
+
+    const handlePointerMove = (event: PointerEvent) => {
+      const bounds = footer.getBoundingClientRect();
+      pointerX = event.clientX - bounds.left;
+      pointerY = event.clientY;
+
+      const nextLeft = Math.max(0, Math.min(bounds.width - cat.offsetWidth, pointerX - cat.offsetWidth / 2));
+      const movingRight = nextLeft > cat.offsetLeft;
+      cat.style.left = `${nextLeft}px`;
+      cat.classList.toggle("face_right", movingRight);
+      cat.classList.toggle("face_left", !movingRight);
+      cat.classList.remove("first_pose");
+      head.style.top = pointerY > bounds.top - 100 ? "-15px" : "-30px";
+
+      const legs = cat.querySelectorAll(".footer-kitten__leg");
+      legs.forEach((leg) => leg.classList.add("walk"));
+      window.clearTimeout(walkTimer);
+      walkTimer = window.setTimeout(() => {
+        legs.forEach((leg) => leg.classList.remove("walk"));
+      }, 1500);
+    };
+
+    const jumpIfNeeded = () => {
+      if (pointerX === null || pointerY === null) return;
+      const bounds = footer.getBoundingClientRect();
+      if (pointerY >= bounds.top - 200) return;
+
+      wrapper.classList.remove("jump");
+      void wrapper.offsetWidth;
+      wrapper.classList.add("jump");
+      window.clearTimeout(jumpTimer);
+      jumpTimer = window.setTimeout(() => wrapper.classList.remove("jump"), 1000);
+    };
+
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    const jumpInterval = window.setInterval(jumpIfNeeded, 1000);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.clearInterval(jumpInterval);
+      window.clearTimeout(walkTimer);
+      window.clearTimeout(jumpTimer);
+    };
+  }, [footerRef]);
+
+  return (
+    <div className="footer-kitten__track" aria-hidden="true">
+      <div className="footer-kitten__wrapper" ref={wrapperRef}>
+        <div className="footer-kitten first_pose" ref={catRef}>
+          <div className="footer-kitten__head" ref={headRef}>
+            <svg viewBox="0 0 76.4 61.2">
+              <polygon className="footer-kitten__eyes" points="63.8,54.1 50.7,54.1 50.7,59.6 27.1,59.6 27.1,54.1 12.4,54.1 12.4,31.8 63.8,31.8" />
+              <path d="M10.2,61.2v-5.1H5.1V51H0V25.5h5.1V15.3h5.1V5.1h5.1V0h5.1v5.1h5.1v5.1h5.1v5.1c0,0,15.2,0,15.2,0v-5.1h5.1V5.1H56V0h5.1v5.1h5.1v10.2h5.1v10.2h5.1l0,25.5h-5.1v5.1h-5.1v5.1H10.2z" />
+              <path className="footer-kitten__face-detail" d="M15.3,45.9h5.1V35.7h-5.1C15.3,35.7,15.3,45.9,15.3,45.9z M45.8,56.1V51H30.6v5.1H45.8z M61.1,35.7H56v10.2h5.1V35.7z" />
+            </svg>
+          </div>
+          <div className="footer-kitten__body">
+            <svg viewBox="0 0 91.7 40.8">
+              <path d="M91.7,40.8H0V10.2h5.1V5.1h5.1V0h66.2v5.1h10.2v5.1h5.1L91.7,40.8z" />
+            </svg>
+            <div className="footer-kitten__tail">
+              <svg viewBox="0 0 25.5 61.1">
+                <polygon points="10.2,56 10.2,50.9 5.1,50.9 5.1,40.7 0,40.7 0,20.4 5.1,20.4 5.1,10.2 10.2,10.2 10.2,5.1 15.3,5.1 15.3,0 25.5,0 25.5,10.2 20.4,10.2 20.4,15.3 15.3,15.3 15.3,20.4 10.2,20.4 10.2,40.7 15.3,40.7 15.3,45.8 20.4,45.8 20.4,50.9 25.5,50.9 25.5,61.1 15.3,61.1 15.3,56" />
+              </svg>
+            </div>
+          </div>
+          <div className="footer-kitten__front-legs">
+            <div className="footer-kitten__leg one"><svg viewBox="0 0 14 30.5"><polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0" /></svg></div>
+            <div className="footer-kitten__leg two"><svg viewBox="0 0 14 30.5"><polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0" /></svg></div>
+          </div>
+          <div className="footer-kitten__back-legs">
+            <div className="footer-kitten__leg three"><svg viewBox="0 0 14 30.5"><polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0" /></svg></div>
+            <div className="footer-kitten__leg four"><svg viewBox="0 0 14 30.5"><polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0" /></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Contact() {
   const [copied, setCopied] = useState(false);
   const { language } = useLanguage();
+  const footerRef = useRef<HTMLElement>(null);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(EMAIL);
@@ -47,7 +144,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-white dot-texture pt-24 pb-10 overflow-hidden"
+      className="relative bg-white dot-texture pt-24 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 dot-texture dark:dark-grid opacity-60" />
@@ -62,8 +159,9 @@ export default function Contact() {
         {language === "en" ? "✓ Email copied to clipboard" : "✓ Đã sao chép email"}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* ── Left ── */}
           <div>
             <p className="section-badge mb-6 reveal">
@@ -169,19 +267,23 @@ export default function Contact() {
               </div>
             </a>
           </div>
+          </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-center text-slate-500 dark:text-slate-500 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
-            {language === "en"
-              ? "© 2026 Tran Minh Nghia — Built with Next.js & TypeScript"
-              : "© 2026 Trần Minh Nghĩa — Phát triển bằng Next.js & TypeScript"}
-          </span>
-          <span className="text-slate-500 dark:text-slate-600 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
-            {language === "en" ? "HCMC Vietnam" : "TP. Hồ Chí Minh, Việt Nam"}
-          </span>
-        </div>
+        <footer ref={footerRef} className="relative mt-60 border-t border-slate-200 bg-white dark:border-white/5 dark:bg-[#253D77]">
+          <FooterKitten footerRef={footerRef} />
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-6 pb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <span className="text-center text-slate-500 dark:text-slate-500 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+              {language === "en"
+                ? "© 2026 Tran Minh Nghia — Built with Next.js & TypeScript"
+                : "© 2026 Trần Minh Nghĩa — Phát triển bằng Next.js & TypeScript"}
+            </span>
+            <span className="text-slate-500 dark:text-slate-600 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+              {language === "en" ? "HCMC Vietnam" : "TP. Hồ Chí Minh, Việt Nam"}
+            </span>
+          </div>
+        </footer>
       </div>
     </section>
   );

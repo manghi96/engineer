@@ -55,13 +55,300 @@ html.dark {
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.25s ease;
+}
+
+html.is-scrolling {
+  scrollbar-color: rgba(148, 163, 184, 0.7) transparent;
+}
+
+html.is-scrolling::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+html.is-scrollbar-hovered {
+  scrollbar-color: rgba(148, 163, 184, 0.7) transparent;
+}
+
+html.is-scrollbar-hovered::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
 
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+.footer-kitten__track {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.footer-kitten__wrapper {
+  position: absolute;
+  bottom: 13px;
+  left: 0;
+}
+
+.footer-kitten {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  width: 60px;
+  height: 30px;
+  background: transparent;
+  transform-origin: center;
+  transition: left 1.5s;
+}
+
+.footer-kitten__body {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+}
+
+.footer-kitten.face_left .footer-kitten__body,
+.footer-kitten.face_right .footer-kitten__body {
+  animation: footer-kitten-turn-body 0.5s forwards;
+}
+
+@keyframes footer-kitten-turn-body {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.5, 1); }
+}
+
+.footer-kitten__head {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  z-index: 1;
+  width: 48px;
+  height: 40px;
+  transition: top 0.5s;
+}
+
+.footer-kitten.first_pose .footer-kitten__head,
+.footer-kitten.face_left .footer-kitten__head {
+  right: 22px;
+}
+
+.footer-kitten__tail {
+  position: absolute;
+  top: -25px;
+  width: 15px;
+  height: 36px;
+  transform-origin: bottom right;
+  animation: footer-kitten-tail 2s forwards;
+}
+
+@keyframes footer-kitten-tail {
+  0%, 100% { left: -5px; transform: rotate(0deg) scale(1); }
+  50% { left: -10px; transform: rotate(-50deg) scale(-1, 1); }
+}
+
+.footer-kitten.first_pose .footer-kitten__tail,
+.footer-kitten.face_left .footer-kitten__tail {
+  left: 45px;
+  animation-name: footer-kitten-tail-left;
+}
+
+@keyframes footer-kitten-tail-left {
+  0%, 100% { left: 45px; transform: rotate(0deg) scale(1); }
+  50% { left: 40px; transform: rotate(50deg) scale(-1, 1); }
+}
+
+.footer-kitten__front-legs,
+.footer-kitten__back-legs {
+  position: absolute;
+  height: 30px;
+  transition: 0.7s;
+}
+
+.footer-kitten__front-legs {
+  right: 0;
+  width: 30px;
+}
+
+.footer-kitten__back-legs {
+  left: 0;
+  width: 25px;
+}
+
+.footer-kitten.first_pose .footer-kitten__front-legs,
+.footer-kitten.face_left .footer-kitten__front-legs {
+  right: 30px;
+}
+
+.footer-kitten.first_pose .footer-kitten__back-legs,
+.footer-kitten.face_left .footer-kitten__back-legs {
+  left: 35px;
+}
+
+.footer-kitten__leg {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  transform-origin: top center;
+}
+
+.footer-kitten__leg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-kitten__leg svg,
+.footer-kitten__body svg,
+.footer-kitten__tail svg,
+.footer-kitten__head svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-kitten.face_left .footer-kitten__leg svg {
+  transform: scale(-1, 1);
+}
+
+.footer-kitten__leg.one,
+.footer-kitten__leg.three {
+  right: 0;
+  bottom: -15px;
+}
+
+.footer-kitten__leg.two,
+.footer-kitten__leg.four {
+  bottom: -15px;
+  left: 0;
+}
+
+.footer-kitten__leg.one.walk,
+.footer-kitten__leg.three.walk {
+  animation: footer-kitten-walk 0.3s infinite;
+}
+
+.footer-kitten__leg.two.walk,
+.footer-kitten__leg.four.walk {
+  animation: footer-kitten-walk-alt 0.3s infinite;
+}
+
+@keyframes footer-kitten-walk {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes footer-kitten-walk-alt {
+  0%, 100% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+.footer-kitten__wrapper.jump {
+  animation: footer-kitten-jump 1s forwards;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten__leg.one {
+  animation: footer-kitten-walk 0.3s infinite;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten__leg.two {
+  animation: footer-kitten-walk-alt 0.3s infinite;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten__leg.three,
+.footer-kitten__wrapper.jump .footer-kitten__leg.four {
+  animation: none;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_right .footer-kitten__back-legs {
+  transform: rotate(50deg);
+  transform-origin: center;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_left .footer-kitten__back-legs {
+  transform: rotate(-50deg);
+  transform-origin: center;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_right .footer-kitten__front-legs {
+  transform: rotate(-60deg);
+  transform-origin: center;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_left .footer-kitten__front-legs {
+  transform: rotate(60deg);
+  transform-origin: center;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_right {
+  animation: footer-kitten-stand-right 0.5s forwards;
+  transform-origin: left bottom;
+}
+
+.footer-kitten__wrapper.jump .footer-kitten.face_left {
+  animation: footer-kitten-stand-left 0.5s forwards;
+  transform-origin: right bottom;
+}
+
+@keyframes footer-kitten-stand-right {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-45deg); }
+}
+
+@keyframes footer-kitten-stand-left {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(45deg); }
+}
+
+@keyframes footer-kitten-jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-200px); }
+}
+
+.footer-kitten polygon,
+.footer-kitten path {
+  fill: #2563eb;
+}
+
+.dark .footer-kitten polygon,
+.dark .footer-kitten path {
+  fill: #F8FAFC;
+}
+
+.footer-kitten .footer-kitten__face-detail {
+  fill: var(--bg);
+}
+
+.dark .footer-kitten .footer-kitten__face-detail {
+  fill: var(--bg);
 }
 
 /* ── Textures ── */
