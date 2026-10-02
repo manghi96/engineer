@@ -77,8 +77,8 @@ const ITEMS: TimelineItem[] = [
     org: "TTM68 Network",
     type: "Full Time",
     viType: "Toàn thời gian",
-    tags: ["Structural Layout & Wireframing", "System Architecture Mapping", "Complex System Visualization"],
-    viTags: ["Bố cục cấu trúc & Wireframing", "Định hình kiến trúc hệ thống", "Trực quan hóa hệ thống phức tạp"],
+    tags: ["Structural Layout & Wireframing", "System Architecture Mapping"],
+    viTags: ["Bố cục cấu trúc & Wireframing", "Định hình kiến trúc hệ thống"],
     description:
       "• Spatial Layout & Wireframing: Designed structured spatial layouts and detailed wireframes for complex digital platforms, ensuring clear spatial hierarchy and organized component distribution.\n• Complex System Visualization: Translated multi-layered system structures and technical requirements into clear, intuitive 2D/3D visual interfaces to optimize navigation and clarity.",
     viDescription:
@@ -248,7 +248,7 @@ export default function Timeline() {
                   {item.tags && (
                     <div className="flex flex-wrap gap-2">
                       <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        {language === "en" ? "Transferable Skills:" : "Kỹ năng chuyển giao:"}
+                        {language === "en" ? "Transferable Skills:" : "Kỹ năng có thể chuyển đổi:"}
                       </span>
                       {(language === "en" ? item.tags : item.viTags ?? item.tags).map((tag) => (
                         <span
