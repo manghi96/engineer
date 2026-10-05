@@ -32,8 +32,8 @@ export default function About() {
               </p>
               <p className="reveal reveal-delay-3">
                 {language === "en"
-                  ? "I'm now shifting my career direction and am fully committed to returning to my core engineering path. I am seeking a Plumbing/MEP BIM Modeler role where I can combine my academic engineering knowledge with my advanced 3D modeling skills to build precise, production-ready BIM models and grow into a professional BIM Manager."
-                  : "Hiện tại, tôi đang chuyển hướng sự nghiệp và hoàn toàn quyết tâm quay trở lại với con đường kỹ thuật chuyên môn. Tôi đang tìm kiếm vị trí BIM Modeler (Cấp thoát nước/MEP), nơi tôi có thể kết hợp kiến ​​thức kỹ thuật nền tảng cùng kỹ năng mô hình hóa 3D chuyên sâu để tạo ra các mô hình BIM chính xác, sẵn sàng cho giai đoạn thi công, đồng thời phát triển bản thân trở thành một BIM Manager."}
+                  ? "I'm now shifting my career direction and am fully committed to returning to my core engineering path. I am seeking a Plumbing/MEP BIM Modeler role where I can combine my academic engineering knowledge with my advanced 3D modeling skills to build precise, production-ready BIM models."
+                  : "Hiện tại, tôi đang chuyển hướng sự nghiệp và hoàn toàn quyết tâm quay trở lại với con đường kỹ thuật chuyên môn. Tôi đang tìm kiếm vị trí BIM Modeler (Cấp thoát nước/MEP), nơi tôi có thể kết hợp kiến ​​thức kỹ thuật nền tảng cùng kỹ năng mô hình hóa 3D chuyên sâu để tạo ra các mô hình BIM chính xác, sẵn sàng cho giai đoạn thi công."}
               </p>
             </div>
 

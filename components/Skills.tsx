@@ -57,7 +57,7 @@ export default function Skills() {
             className="text-4xl lg:text-5xl font-bold reveal reveal-delay-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            {language === "en" ? "What I bring" : "Những gì mà tôi áp dụng"}
+            {language === "en" ? "What I bring" : "Những kỹ năng mà tôi áp dụng"}
             {/* <br /> */}
             <span className="italic text-blue-600 dark:text-blue-500">
               {language === "en" ? " to the table" : " vào công việc"}
