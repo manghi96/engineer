@@ -259,6 +259,14 @@ export default function Hero() {
             >
               LinkedIn ↗
             </a>
+            <a
+              href="https://www.behance.net/manghi96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-700 hover:text-blue-600 dark:text-slate-500 dark:hover:text-blue-500 transition-colors text-sm font-mono"
+            >
+              Behance ↗
+            </a>
             <span className="sr-only" role="status" aria-live="polite">
               {emailCopyStatus === "copied"
                 ? language === "en" ? "Email address copied to clipboard." : "Đã sao chép địa chỉ email."
