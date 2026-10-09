@@ -68,7 +68,7 @@ export default function Certifications() {
   return (
     <section className="py-24 lg:py-24 bg-white dot-texture">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-12">
+        <div className="mb-14">
           <p className="section-badge mb-6 reveal">
             {language === "en" ? "05 — Certifications" : "05 — Chứng chỉ"}
           </p>
