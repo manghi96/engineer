@@ -12,7 +12,6 @@ const SKILLS: { category: string; emoji: string; desc: string; tags: SkillTag[] 
     tags: [
       { name: "AutoDesk Revit", type: "software" },
       { name: "AutoDesk AutoCAD", type: "software" },
-      { name: "Navisworks Management", type: "software" },
       { name: "Microsoft Office", type: "software" },
       { name: "AutoDesk Maya", type: "software" },
       { name: "Blender", type: "software" },

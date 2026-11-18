@@ -267,7 +267,7 @@ export default function Contact() {
                   {language === "en" ? "Location" : "Địa chỉ"}
                 </p>
                 <span className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors text-sm">
-                  {language === "en" ? "Tan Thoi Hiep, Ho Chi Minh City ↗" : "Tân Thới Hiệp, Thành phố Hồ Chí Minh ↗"}
+                  {language === "en" ? "Ho Chi Minh City ↗" : "Thành phố Hồ Chí Minh ↗"}
                 </span>
               </div>
             </a>
