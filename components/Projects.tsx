@@ -4,6 +4,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 type Project = {
   title: string;
+  viTitle: string;
   subtitle: string;
   viSubtitle: string;
   period: string;
@@ -20,75 +21,93 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    title: "Revit Case Study",
-    subtitle: "abc",
-    viSubtitle: "abc",
+    title: "Plumbing Modeling for Office Building",
+    viTitle: "Mô hình hệ thống cấp thoát nước cho tòa nhà văn phòng",
+    subtitle: "Revit Case Study",
+    viSubtitle: "Revit Case Study",
     period: "2026",
     description:
-      "xyz",
+      "This is the plumbing modeling for a office building project, created using AutoDesk Revit. The model includes detailed plumbing systems, fixtures, and layouts, ensuring accurate representation and coordination with other building systems.",
     viDescription:
-      "xyz",
+      "Đây là mô hình hệ thống cấp thoát nước cho một dự án tòa nhà văn phòng, được tạo bằng AutoDesk Revit. Mô hình bao gồm các hệ thống cấp thoát nước chi tiết, thiết bị và bố trí, đảm bảo sự thể hiện chính xác và phối hợp với các hệ thống xây dựng khác.",
     role: "BIM Modeler",
     viRole: "BIM Modeler",
     team: "Only me",
     viTeam: "Chỉ có tôi",
     skill: ["MPEF Modeling", "AutoDesk Revit", "AutoDesk AutoCAD"],
-    githubUrl: "https://viewer.autodesk.com/",
+    githubUrl: "https://autode.sk/4zBWakt",
   },
   {
-    title: "PayAny",
-    subtitle: "Cross-Border Multi-Currency Payment and Digital Wallet Platform",
-    viSubtitle: "Nền tảng thanh toán đa tiền tệ xuyên biên giới và ví điện tử",
-    period: "2024 — 2026",
+    title: "Electrical Modeling for Office Building",
+    viTitle: "Mô hình hệ thống điện cho tòa nhà văn phòng",
+    subtitle: "Revit Case Study",
+    viSubtitle: "Revit Case Study",
+    period: "2026",
     description:
-      "A cross-border multi-currency payment and digital wallet platform that enables users to send, receive, and store funds in multiple currencies. Integrates with VeChain blockchain for secure transaction recording and verification.",
+      "This is the electrical modeling for a office building project, created using AutoDesk Revit. The model includes detailed electrical systems, fixtures, and layouts, ensuring accurate representation and coordination with other building systems.",
     viDescription:
-      "Nền tảng thanh toán đa tiền tệ xuyên biên giới và ví điện tử, cho phép người dùng gửi, nhận và lưu trữ tiền bằng nhiều loại tiền tệ. Tích hợp blockchain VeChain để ghi nhận và xác minh giao dịch an toàn.",
-    // businessValue:
-    //   "Facilitates seamless international transactions, reducing friction and costs for users. Provides a secure and transparent platform for cross-border payments, enhancing trust and adoption.",
-    role: "Product Designer · UI/UX Designer · Graphic Designer",
-    viRole: "Nhà thiết kế sản phẩm · Thiết kế UI/UX · Thiết kế đồ họa",
-    team: "10 members",
-    viTeam: "10 thành viên",
-    skill: ["Design System", "Wireframing", "Prototyping", "UI/UX Design", "Figma", "Adobe Illustrator", "Adobe Photoshop", "Spline"],
-    githubUrl: "https://www.payany.com/",
+      "Đây là mô hình hệ thống điện cho một dự án tòa nhà văn phòng, được tạo bằng AutoDesk Revit. Mô hình bao gồm các hệ thống điện chi tiết, thiết bị và bố trí, đảm bảo sự thể hiện chính xác và phối hợp với các hệ thống xây dựng khác.",
+    role: "BIM Modeler",
+    viRole: "BIM Modeler",
+    team: "Only me",
+    viTeam: "Chỉ có tôi",
+    skill: ["MPEF Modeling", "AutoDesk Revit", "AutoDesk AutoCAD"],
+    githubUrl: "https://autode.sk/495CmLm",
   },
-  {
-    title: "IZIon24 Admin Portal",
-    subtitle: "Internal Management Web Platform for IZIon24",
-    viSubtitle: "Nền tảng web quản trị nội bộ cho IZIon24",
-    period: "2022",
-    description:
-      "A web-based internal management platform for IZIon24, a property service marketplace. The portal allows administrators to manage service providers, residents, and transactions, providing insights and analytics for business operations.",
-    viDescription:
-      "Nền tảng quản lý nội bộ trên web dành cho IZIon24, một sàn dịch vụ bất động sản. Cổng quản trị giúp quản trị viên quản lý nhà cung cấp dịch vụ, cư dân và giao dịch, đồng thời cung cấp dữ liệu phân tích phục vụ hoạt động kinh doanh.",
-    // businessValue:
-    //   "Streamlines internal operations, enabling efficient management of service providers and residents. Provides data-driven insights for decision-making, enhancing the overall service quality and customer satisfaction.",
-    role: "UI/UX Designer",
-    viRole: "Nhà thiết kế UI/UX",
-    team: "15 members",
-    viTeam: "15 thành viên",
-    skill: ["UI/UX Design", "Prototyping", "Figma", "Adobe Illustrator", "Adobe Photoshop"],
-    githubUrl: "https://izion24.com.vn/",
-  },
-  {
-    title: "PunchKicks",
-    subtitle: "Design POD",
-    viSubtitle: "Thiết kế sản phẩm in theo yêu cầu (POD)",
-    period: "2021",
-    description:
-      "PunchKicks is a website selling custom-printed shirts for the US market.",
-    viDescription:
-      "PunchKicks là một trang web bán áo thun in theo yêu cầu cho thị trường Mỹ.",
-    // businessValue:
-    //   " Empowers creators and small businesses to monetize their designs through a user-friendly platform. Offers a seamless experience for product customization and order management, enhancing customer engagement and sales.",
-    role: "Graphic Designer",
-    viRole: "Nhà thiết kế đồ họa",
-    team: "5 members",
-    viTeam: "5 thành viên",
-    skill: ["Graphic Design", "Trend Research", "Adobe Illustrator", "Adobe Photoshop"],
-    githubUrl: "https://punchkicks.com/",
-  },
+  // {
+  //   title: "PayAny",
+  //   subtitle: "Cross-Border Multi-Currency Payment and Digital Wallet Platform",
+  //   viSubtitle: "Nền tảng thanh toán đa tiền tệ xuyên biên giới và ví điện tử",
+  //   period: "2024 — 2026",
+  //   description:
+  //     "A cross-border multi-currency payment and digital wallet platform that enables users to send, receive, and store funds in multiple currencies. Integrates with VeChain blockchain for secure transaction recording and verification.",
+  //   viDescription:
+  //     "Nền tảng thanh toán đa tiền tệ xuyên biên giới và ví điện tử, cho phép người dùng gửi, nhận và lưu trữ tiền bằng nhiều loại tiền tệ. Tích hợp blockchain VeChain để ghi nhận và xác minh giao dịch an toàn.",
+  //   // businessValue:
+  //   //   "Facilitates seamless international transactions, reducing friction and costs for users. Provides a secure and transparent platform for cross-border payments, enhancing trust and adoption.",
+  //   role: "Product Designer · UI/UX Designer · Graphic Designer",
+  //   viRole: "Nhà thiết kế sản phẩm · Thiết kế UI/UX · Thiết kế đồ họa",
+  //   team: "10 members",
+  //   viTeam: "10 thành viên",
+  //   skill: ["Design System", "Wireframing", "Prototyping", "UI/UX Design", "Figma", "Adobe Illustrator", "Adobe Photoshop", "Spline"],
+  //   githubUrl: "https://www.payany.com/",
+  // },
+  // {
+  //   title: "IZIon24 Admin Portal",
+  //   subtitle: "Internal Management Web Platform for IZIon24",
+  //   viSubtitle: "Nền tảng web quản trị nội bộ cho IZIon24",
+  //   period: "2022",
+  //   description:
+  //     "A web-based internal management platform for IZIon24, a property service marketplace. The portal allows administrators to manage service providers, residents, and transactions, providing insights and analytics for business operations.",
+  //   viDescription:
+  //     "Nền tảng quản lý nội bộ trên web dành cho IZIon24, một sàn dịch vụ bất động sản. Cổng quản trị giúp quản trị viên quản lý nhà cung cấp dịch vụ, cư dân và giao dịch, đồng thời cung cấp dữ liệu phân tích phục vụ hoạt động kinh doanh.",
+  //   // businessValue:
+  //   //   "Streamlines internal operations, enabling efficient management of service providers and residents. Provides data-driven insights for decision-making, enhancing the overall service quality and customer satisfaction.",
+  //   role: "UI/UX Designer",
+  //   viRole: "Nhà thiết kế UI/UX",
+  //   team: "15 members",
+  //   viTeam: "15 thành viên",
+  //   skill: ["UI/UX Design", "Prototyping", "Figma", "Adobe Illustrator", "Adobe Photoshop"],
+  //   githubUrl: "https://izion24.com.vn/",
+  // },
+  // {
+  //   title: "PunchKicks",
+  //   subtitle: "Design POD",
+  //   viSubtitle: "Thiết kế sản phẩm in theo yêu cầu (POD)",
+  //   period: "2021",
+  //   description:
+  //     "PunchKicks is a website selling custom-printed shirts for the US market.",
+  //   viDescription:
+  //     "PunchKicks là một trang web bán áo thun in theo yêu cầu cho thị trường Mỹ.",
+  //   // businessValue:
+  //   //   " Empowers creators and small businesses to monetize their designs through a user-friendly platform. Offers a seamless experience for product customization and order management, enhancing customer engagement and sales.",
+  //   role: "Graphic Designer",
+  //   viRole: "Nhà thiết kế đồ họa",
+  //   team: "5 members",
+  //   viTeam: "5 thành viên",
+  //   skill: ["Graphic Design", "Trend Research", "Adobe Illustrator", "Adobe Photoshop"],
+  //   githubUrl: "https://punchkicks.com/",
+  // },
 ];
 
 export default function Projects() {
@@ -131,7 +150,7 @@ export default function Projects() {
                             className="text-xl font-bold text-[#0F0F0E]"
                             style={{ fontFamily: "var(--font-display)" }}
                           >
-                            {project.title}
+                            {language === "en" ? project.title : project.viTitle}
                           </h3>
                         </div>
                         <p className="text-blue-600 text-sm font-medium">
