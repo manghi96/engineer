@@ -31,6 +31,7 @@ const SKILLS: { category: string; emoji: string; desc: string; tags: SkillTag[] 
     desc: "",
     tags: [
       { name: "Interdisciplinary Communication & Coordination", viName: "Giao tiếp & phối hợp liên ngành", type: "soft" },
+      { name: "Reading Technical Drawings", viName: "Đọc hiểu bản vẽ kỹ thuật", type: "soft" },
       { name: "Analytical Problem-Solving & Spatial Thinking", viName: "Tư duy phân tích, giải quyết vấn đề & không gian", type: "soft" },
       { name: "Collaboration & Teamwork", viName: "Hợp tác & làm việc nhóm", type: "soft" },
       { name: "Time Management & Organization", viName: "Quản lý thời gian & tổ chức công việc", type: "soft" },
