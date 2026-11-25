@@ -4,16 +4,19 @@ import { useState, useRef, useEffect, type RefObject } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const EMAIL = "manghi.work@gmail.com";
-// Đường dẫn đến file CV duy nhất của bạn
-const CV_FILE = "Tran_Minh_Nghia_Resume.pdf";
+const CV_FILES = {
+  en: "Tran_Minh_Nghia_Resume.pdf",
+  vi: "Tran_Minh_Nghia_Resume_VN.pdf",
+};
 
 function DownloadCVButton() {
   const { language } = useLanguage();
+  const cvFile = CV_FILES[language];
 
   return (
     <a
-      href={CV_FILE}
-      download="Tran_Minh_Nghia_Resume.pdf"
+      href={cvFile}
+      download={cvFile}
       className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 text-sm inline-flex items-center gap-2"
     >
       {language === "en" ? "Download Resume" : "Tải CV"}

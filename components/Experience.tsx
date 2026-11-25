@@ -50,11 +50,11 @@ const ITEMS: TimelineItem[] = [
     type: "Full Time",
     viType: "Toàn thời gian",
     tags: ["Standardized Component Systems", "Cross-functional Coordination", "Technical System Workflows", "AI Workflow Acceleration"],
-    viTags: ["Hệ thống thành phần chuẩn hóa", "Phối hợp liên chức năng", "Quy trình hệ thống kỹ thuật", "Tăng tốc quy trình AI"],
+    viTags: ["Hệ thống thành phần chuẩn hóa", "Phối hợp liên chức năng", "Quy trình hệ thống kỹ thuật", "Tăng tốc quy trình làm việc bằng AI"],
     description:
       "• System Architecture & Standardization: Built and maintained comprehensive, scalable component systems and visual documentation, ensuring high precision, consistency, and reusability across complex digital ecosystems.\n• Cross-functional & Technical Coordination: Collaborated directly with product owners, stakeholders, and engineering teams in an Agile environment to translate complex business logic into structured technical solutions.\n• Complex Workflow Mapping: Designed end-to-end structural workflows, spatial layouts, and interactive prototypes, optimizing complex multi-layered system processes for maximum clarity.\n• AI-Powered Process Acceleration: Applied modern AI tools to accelerate technical research, document analysis, and workflow optimization, significantly streamlining early-stage discovery phases.",
     viDescription:
-      "• Kiến trúc hệ thống & Chuẩn hóa: Xây dựng và duy trì hệ thống thành phần và tài liệu trực quan toàn diện, có khả năng mở rộng, đảm bảo độ chính xác, nhất quán và khả năng tái sử dụng cao trong các hệ sinh thái kỹ thuật số phức tạp.\n• Phối hợp liên chức năng & kỹ thuật: Làm việc trực tiếp với chủ sở hữu sản phẩm, các bên liên quan và nhóm kỹ thuật trong môi trường Agile để chuyển đổi logic kinh doanh phức tạp thành các giải pháp kỹ thuật có cấu trúc.\n• Lập bản đồ quy trình làm việc phức tạp: Thiết kế quy trình làm việc từ đầu đến cuối, bố cục không gian và nguyên mẫu tương tác, tối ưu hóa các quy trình hệ thống đa lớp phức tạp để đạt được sự rõ ràng tối đa.\n• Tăng tốc quy trình bằng AI: Áp dụng các công cụ AI hiện đại để tăng tốc nghiên cứu kỹ thuật, phân tích tài liệu và tối ưu hóa quy trình làm việc, giúp đơn giản hóa đáng kể giai đoạn khám phá ban đầu.",
+      "• Kiến trúc hệ thống & Chuẩn hóa: Xây dựng và duy trì hệ thống thành phần và tài liệu trực quan toàn diện, có khả năng mở rộng, đảm bảo độ chính xác, nhất quán và khả năng tái sử dụng cao trong các hệ sinh thái kỹ thuật số phức tạp.\n• Phối hợp liên chức năng & kỹ thuật: Làm việc trực tiếp với chủ sở hữu sản phẩm, các bên liên quan và nhóm kỹ thuật trong môi trường Agile để chuyển đổi logic kinh doanh phức tạp thành các giải pháp kỹ thuật có cấu trúc.\n• Lập bản đồ quy trình làm việc phức tạp: Thiết kế quy trình làm việc từ đầu đến cuối, bố cục không gian và nguyên mẫu tương tác, tối ưu hóa các quy trình hệ thống đa lớp phức tạp để đạt được sự rõ ràng tối đa.\n• Tăng tốc quy trình làm việc bằng AI: Áp dụng các công cụ AI hiện đại để tăng tốc nghiên cứu kỹ thuật, phân tích tài liệu và tối ưu hóa quy trình làm việc, giúp đơn giản hóa đáng kể giai đoạn khám phá ban đầu.",
   },
   {
     period: "2022",
@@ -96,7 +96,7 @@ const ITEMS: TimelineItem[] = [
     description:
       "• Technical Layout & Dimensional Precision: Created responsive layout frameworks with a focus on structural accuracy, grid alignment, and clean visual organization.\n• Implementation & Quality Inspection: Worked directly with engineering teams to inspect, fine-tune, and verify design outputs against technical specifications, ensuring exact pixel-perfect fidelity.",
     viDescription:
-      "• Bố cục kỹ thuật & Độ chính xác kích thước: Tạo các khung bố cục đáp ứng với trọng tâm là độ chính xác cấu trúc, căn chỉnh lưới và tổ chức hình ảnh sạch sẽ.\n• Triển khai & Kiểm tra chất lượng: Làm việc trực tiếp với các nhóm kỹ thuật để kiểm tra, tinh chỉnh và xác minh đầu ra thiết kế so với các thông số kỹ thuật kỹ thuật, đảm bảo độ trung thực chính xác từng pixel.",
+      "• Bố cục kỹ thuật & Độ chính xác kích thước: Tạo các khung bố cục đáp ứng với trọng tâm là độ chính xác cấu trúc, căn chỉnh lưới và tổ chức hình ảnh sạch sẽ.\n• Triển khai & Kiểm tra chất lượng: Làm việc trực tiếp với các nhóm kỹ thuật để kiểm tra, tinh chỉnh và xác minh đầu ra thiết kế so với các thông số kỹ thuật, đảm bảo độ trung thực chính xác từng pixel.",
   },
   {
     period: "2021",

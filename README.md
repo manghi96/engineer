@@ -1,129 +1,111 @@
 # Tran Minh Nghia | Portfolio
 
-Portfolio cá nhân được xây dựng bằng Next.js, TypeScript và Tailwind CSS, tập trung vào giới thiệu bản thân, học vấn, kỹ năng, kinh nghiệm và thông tin liên hệ với giao diện hiện đại, có khả năng chuyển đổi ngôn ngữ Tiếng Anh/Tiếng Việt và chế độ tối/sáng.
+Portfolio cá nhân giới thiệu thông tin, học vấn, kỹ năng, kinh nghiệm, dự án và chứng chỉ của Trần Minh Nghĩa. Website được xây dựng bằng Next.js, TypeScript và Tailwind CSS, hỗ trợ tiếng Anh và tiếng Việt.
 
-## Tính năng mới
+## Tính năng
 
-- Giao diện portfolio hiện đại, responsive trên desktop/mobile
-- Chuyển đổi ngôn ngữ Tiếng Anh / Tiếng Việt
-- Chế độ tối/sáng với lưu lựa chọn vào localStorage
-- Hero section có hiệu ứng typing, terminal-style UI và nút tải CV
-- Scroll reveal animation cho các section
-- Custom cursor, page loader và favicon tùy chỉnh
-- Khu vực About, Education, Skills, Experience, Certifications, Contact
-- Tích hợp metadata SEO và Open Graph cơ bản
+- Giao diện portfolio responsive, gồm các phần Hero, About, Education, Skills, Experience, Projects, Certifications và Contact.
+- Chuyển đổi tiếng Anh/tiếng Việt; lựa chọn ngôn ngữ được lưu trong `localStorage`.
+- Nút tải CV ở Hero và Contact tự chọn bản tiếng Anh hoặc tiếng Việt theo ngôn ngữ đang hiển thị.
+- Chế độ sáng/tối, lưu lựa chọn trong `localStorage` và dùng giao diện hệ thống nếu chưa có lựa chọn được lưu.
+- Hiệu ứng typing ở Hero, terminal mô phỏng, mô hình tương tác 3D ở About, page loader, custom cursor và scroll reveal.
+- Metadata SEO, Open Graph và favicon.
 
-## Stack công nghệ
+## Công nghệ
 
 - Next.js 14
 - React 18
 - TypeScript
 - Tailwind CSS
-- Three.js (dùng trong hiệu ứng visual trong About section)
+- Three.js
 
 ## Chạy dự án local
 
+Yêu cầu Node.js 20 và npm.
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Sau đó mở trình duyệt tại:
+Mở [http://localhost:3000](http://localhost:3000) để xem website.
 
-```text
-http://localhost:3000
-```
-
-## Build production
+## Build website
 
 ```bash
 npm run build
-npm run start
 ```
 
-## Cấu trúc thư mục
+Lệnh trên tạo website dạng static export trong thư mục `out/`, sẵn sàng để deploy. Kiểm tra TypeScript riêng bằng:
+
+```bash
+npx tsc --noEmit
+```
+
+## Cấu trúc dự án
 
 ```text
-portfolio/
-├── app/
-│   ├── globals.css             # Style toàn cục, animation, theme
-│   ├── layout.tsx              # Metadata, layout gốc, provider
-│   └── page.tsx                # Trang chính, sắp xếp các section
-├── components/
-│   ├── About.tsx               # Giới thiệu
-│   ├── Certifications.tsx      # Chứng chỉ
-│   ├── Contact.tsx             # Liên hệ + tải CV
-│   ├── CustomCursor.tsx        # Con trỏ tùy chỉnh
-│   ├── Education.tsx           # Học vấn
-│   ├── Experience.tsx          # Kinh nghiệm làm việc
-│   ├── Hero.tsx                # Hero, typing text, CTA
-│   ├── LanguageProvider.tsx    # Quản lý ngôn ngữ
-│   ├── Nav.tsx                 # Navbar + dark mode + language toggle
-│   ├── PageLoader.tsx          # Loader khi vào trang
-│   ├── RainDropsModel.tsx      # Hiệu ứng 3D / background
-│   ├── ScrollReveal.tsx        # Trigger animation reveal
-│   ├── Skills.tsx              # Kỹ năng
-│   └── ...
-├── public/
-│   ├── Tran_Minh_Nghia_Resume.pdf   # File CV
-│   ├── logo.png                # Logo portfolio
-│   ├── favicon-16x16.png       # Favicon
-│   ├── favicon-32x32.png       # Favicon
-│   ├── apple-touch-icon.png    # Apple icon
-│   └── ...
-├── package.json
-├── next.config.mjs
-├── tailwind.config.ts
-├── tsconfig.json
-├── postcss.config.mjs
-└── README.md
+app/
+├── globals.css
+├── layout.tsx
+└── page.tsx
+components/
+├── About.tsx
+├── Certifications.tsx
+├── Contact.tsx
+├── CustomCursor.tsx
+├── Education.tsx
+├── Experience.tsx
+├── Hero.tsx
+├── LanguageProvider.tsx
+├── Nav.tsx
+├── PageLoader.tsx
+├── Projects.tsx
+├── RainDropsModel.tsx
+├── ScrollReveal.tsx
+└── Skills.tsx
+public/
+├── Tran_Minh_Nghia_Resume.pdf
+├── Tran_Minh_Nghia_Resume_VN.pdf
+├── logo.png
+├── logo-dark.png
+├── favicon-16x16.png
+├── favicon-32x32.png
+└── apple-touch-icon.png
 ```
 
-## Cập nhật thông tin cá nhân
+## Cập nhật nội dung
 
-Bạn có thể chỉnh sửa nhanh các phần sau:
-
-- Thông tin cá nhân, mô tả SEO: `app/layout.tsx`
-- Tên và mô tả trong hero/about: `components/Hero.tsx`, `components/About.tsx`
+- Metadata và favicon: `app/layout.tsx`
+- Các section và thứ tự hiển thị: `app/page.tsx`
+- Nội dung Hero và nút tải CV: `components/Hero.tsx`
+- Nội dung About: `components/About.tsx`
 - Học vấn: `components/Education.tsx`
 - Kỹ năng: `components/Skills.tsx`
 - Kinh nghiệm: `components/Experience.tsx`
+- Dự án: `components/Projects.tsx`
 - Chứng chỉ: `components/Certifications.tsx`
-- Email, LinkedIn, địa điểm liên hệ: `components/Contact.tsx`
-- File CV: `public/Tran_Minh_Nghia_Resume.pdf`
+- Email, LinkedIn và nút tải CV ở Contact: `components/Contact.tsx`
+- Ngôn ngữ: `components/LanguageProvider.tsx`
+
+Đặt các tệp CV trong `public/`. Bản tiếng Anh là `Tran_Minh_Nghia_Resume.pdf`; bản tiếng Việt là `Tran_Minh_Nghia_Resume_VN.pdf`. Các nút tải CV ở Hero và Contact tự chọn tệp theo ngôn ngữ hiện tại.
 
 ## Deploy lên Vercel
 
-1. Push source code lên GitHub
-2. Vào [Vercel](https://vercel.com)
-3. Chọn `New Project` → import repository
-4. Vercel tự detect Next.js và nhấn `Deploy`
-5. (Tùy chọn) cấu hình custom domain trong Project Settings
+Import repository vào [Vercel](https://vercel.com) và deploy theo hướng dẫn của nền tảng. Cấu hình hiện tại trong `next.config.mjs` tạo static export và đặt `basePath` là `/engineer` cho GitHub Pages; nếu deploy trên một domain hoặc đường dẫn khác, hãy điều chỉnh cấu hình này cho phù hợp.
 
-## Deploy lên GitHub Pages bằng GitHub Actions
+## Deploy lên GitHub Pages
 
-Repository đã có workflow tại `.github/workflows/nextjs.yml`. Workflow sẽ tự động cài dependencies, build website dạng static export và deploy thư mục `out/` lên GitHub Pages mỗi khi có commit được push lên nhánh `main`. Có thể chạy thủ công từ tab **Actions** bằng cách chọn workflow **Deploy Next.js site to Pages** → **Run workflow**.
+Workflow `.github/workflows/nextjs.yml` build website và deploy thư mục `out/` khi có push lên nhánh `main`. Có thể chạy thủ công từ **Actions** bằng workflow **Deploy Next.js site to Pages**.
 
 ### Thiết lập lần đầu
 
-1. Push repository lên GitHub, bảo đảm workflow `.github/workflows/nextjs.yml` đã có trên nhánh `main`.
-2. Mở repository trên GitHub, vào **Settings** → **Pages**.
-3. Trong mục **Build and deployment**, chọn **Source: GitHub Actions**.
-4. Vào tab **Actions** để theo dõi workflow. Khi job `build` và `deploy` hoàn tất thành công, trang sẽ được publish tại:
+1. Push repository lên GitHub, bảo đảm workflow có trên nhánh `main`.
+2. Trong repository, mở **Settings** → **Pages** và chọn **GitHub Actions** tại mục **Build and deployment**.
+3. Theo dõi workflow trong tab **Actions**. Sau khi build và deploy thành công, website sẽ có tại:
 
    ```text
    https://manghi96.github.io/engineer/
    ```
 
-### Cấu hình và lưu ý
-
-- GitHub Pages được cấu hình trong `next.config.mjs` với `output: "export"` và `basePath: "/engineer"`; giá trị `basePath` phải khớp tên repository khi deploy dưới dạng project site.
-- Next.js tạo static site trong thư mục `out/`; workflow upload thư mục này làm artifact và deploy lên Pages.
-- Sau lần thiết lập đầu tiên, mỗi lần push lên `main` sẽ tự động chạy deploy. Các nhánh khác không tự deploy.
-- Nếu đổi tên repository, cần cập nhật `basePath` trong `next.config.mjs` và URL tương ứng ở trên.
-
-## Ghi chú
-
-- Nếu cần đổi tên dự án hoặc metadata, hãy cập nhật trong `app/layout.tsx` và `package.json`
-- Nếu muốn thêm section mới, hãy cập nhật `app/page.tsx` và tạo component tương ứng trong `components/`
-- Script `npm run lint` cũng có sẵn để kiểm tra chất lượng code
+`next.config.mjs` hiện cấu hình `output: "export"`, `trailingSlash: true` và `basePath: "/engineer"`. Nếu đổi tên repository hoặc đường dẫn deploy, cập nhật `basePath` và URL tương ứng.
