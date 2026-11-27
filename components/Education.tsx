@@ -12,8 +12,8 @@ const ITEMS: EducationItem[] = [
   {
     period: "2014 - 2019",
     title: {
-      en: "Bachelor of Environmental Engineering Technology",
-      vi: "Bằng cử nhân ngành Công nghệ Kỹ thuật Môi trường",
+      en: "Engineer Degree of Environmental Engineering Technology",
+      vi: "Bằng Kỹ sư ngành Công nghệ Kỹ thuật Môi trường",
     },
     org: {
       en: "Ton Duc Thang University",
